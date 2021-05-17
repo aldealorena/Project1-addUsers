@@ -1,5 +1,6 @@
 import React from 'react';
 import './UserAddForm.css';
+
 class UserAddForm extends React.Component {
     constructor(props) {
         super(props);
@@ -51,7 +52,19 @@ class UserAddForm extends React.Component {
                     onChange={(event) => this.updateIsGoldClient(event)}
                 />
 
-                <input type="submit" value="Introdu utilizatorul"/>
+                
+                <div className="user-add-form-button-position">
+                    <input className="user-add-form-button" type="submit" value="Add user"/>
+                    <input className="user-add-form-buttonn button-clear" type="reset" value="Clear data" 
+                     onClick={(event) => {this.props.clearItems(event,name, email, isGoldClient); 
+                        this.setState({name: '', email: '', isGoldClient: false});  console.log(this.ref) 
+                     }}/>
+
+                    
+                </div>
+
+
+               
             </form>
         )
     }
